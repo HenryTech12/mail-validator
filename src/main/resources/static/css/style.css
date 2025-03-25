@@ -1,0 +1,193 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.content , .background {
+  width: 100%;
+}
+h2 {
+  font-family: 'Montserrat';
+}
+.content {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  order: 2;
+  padding: 1rem;
+  font-family: 'Lato';
+}
+.validation section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.validation section > ul {
+   margin-left: 0.5rem;
+   display: block;
+   list-style: circle;
+}
+.validation section span, .validation section label {
+  font-family: 'Open Sans';
+}
+.validation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: .8rem;
+  margin: .5rem 0;
+}
+.validation > section > img {
+  width: 20px;
+  height: auto;
+}
+.form form {
+  margin: .9rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 0.5rem;
+}
+
+input {
+  height: 2.7rem;
+  padding: .5rem;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background: whitesmoke;
+  box-shadow: 0px 0px 8px 0px #CBCCDA;
+  backdrop-filter: blur(2rem);
+}
+button {
+  width: max(100px);
+  height: 2.7rem;
+  background: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  margin: .3rem 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border: none;
+  font-family: 'Lato';
+  outline: none;
+}
+.background {
+  background: url('/asset/bg/5064259.jpg');
+  width: 100%;
+  height: 300px;
+  background-size: contain;
+  order: 1;
+  object-position: center;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+}
+
+.transist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+.transist  .label {
+  font-weight: bolder;
+  font-size: 1.3em;
+}
+
+.transist .load-dot {
+   display: inline-block;
+   font-size: 1.5em;
+   vertical-align: center;
+   align-content: center;
+}
+/* LOADING STYLES */
+.loader {
+  position: fixed;
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background: transparent;
+  box-shadow: 0px 3px 16px 0px rgba(211,211,211,1);
+  border: 1px solid black;
+  backdrop-filter: blur(8px);
+}
+.load {
+  width: 40px;
+  height: 40px;
+  object-position: center;
+  background-position: center;
+  background-size: contain;
+  z-index: 1000;
+  animation: load 0.8s forwards linear infinite;
+  transition: all 1s linear;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 700px) {
+ .content {
+   order: 1;
+ }
+ .container {
+   display: flex;
+   flex-direction: row;
+ }
+ .loader {
+   width: 100%;
+  
+ }
+ .background {
+   order: 2;
+ }
+}

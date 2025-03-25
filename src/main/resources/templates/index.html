@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Email Validator App</title>
+  
+  <!-- HTML -->
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=lock_person" />
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+  <!-- Project -->
+  <main class="container">
+    <div class="content">
+       <section class="header">
+          <h2>Email Validator</h2>
+          <span>Check Your Email Validity</span>
+       </section>
+       <section>
+          <h2>Validation Result</h2>
+          <div class="validation" th:if="${show}" style="margin-left: 0.8rem;">
+            <section>
+              <ul>
+                  <li><span th:text="${valid}">Invalid email</span></li>
+              </ul>
+            </section>
+            <section>
+              <ul>
+                  <li><span th:text="${disposable}">Disposable email detected</span></li>
+              </ul>
+            </section>
+            
+            <section>
+              <ul>
+                  <li><span th:text="${block}">Email is not blacklisted</span></li>
+              </ul>
+            </section>
+
+            <section>
+                <h2>Email Strength</h2>
+                <div th:text="${finalResponse}" style="margin-left: 0.8rem;"></div>
+            </section>
+          </div>
+          
+          <div class="form">
+            <form th:action="@{/mail/test}" id="form" method="post" th:object="${mailValidator}">
+              <input type="email" th:field="*{email}" placeholder="Your Email" class="test" title="hello" required>
+              <button type="submit" class="validate">
+                <span class="material-symbols-outlined">lock_person</span>
+                <span>Check</span>
+              </button>
+            </form>
+          </div>
+       </section>
+    </div>
+    
+    <div class="loader transist">
+      <img th:src="@{/asset/icons/load.png}" width="40" height="40" class="load-img" id="icon-load">
+      <section>
+         <span class="label" id="writer"></span>
+      </section> 
+    </div>
+    
+    <div class="background">
+      
+    </div>
+  </main>
+  <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
