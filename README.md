@@ -3,7 +3,7 @@
 A Spring Boot application for validating email addresses efficiently.
 
 ## 🚀 Features
-- Validate email addresses using regex and other validation techniques.
+- Validate email addresses using external APIs.
 - RESTful API with easy integration.
 - Lightweight and scalable.
 - Front-end built with **HTML, CSS, and JavaScript**.
@@ -55,25 +55,5 @@ Or for Windows:
 ```sh
 mvnw.cmd spring-boot:run
 ```
-
-### 3️⃣ API Usage
-#### Validate an Email
-```http
-POST /validate
-Content-Type: application/json
-
-{
-  "email": "test@example.com"
-}
-```
-
-Response:
-```json
-{
-  "valid": true,
-  "message": "Valid email address"
-}
-```
----
 
 💡 _Happy Coding!_ 🚀
